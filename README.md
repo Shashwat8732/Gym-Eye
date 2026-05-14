@@ -143,7 +143,4 @@ Pull requests welcome! For major changes, open an issue first.
 
 ---
 
-
----
-
-Made with ❤️ by [Shashwat](https://github.com/shashwat8732)
+**Made by Shashwat Raj** | [GitHub](https://github.com/Shashwat8732) | [LinkedIn](https://www.linkedin.com/in/shashwatraj1412/)
