@@ -16,6 +16,35 @@ from services.coaching.llm import LLMCoach
 from services.coaching.tts import TextToSpeech
 from services.coaching.voice_pipeline import VoicePipeline, autoplay_audio
 
+
+
+def get_rtc_config():
+    return {
+        "iceServers": [
+            {"urls": "stun:stun.relay.metered.ca:80"},
+            {
+                "urls": "turn:global.relay.metered.ca:80",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            },
+            {
+                "urls": "turn:global.relay.metered.ca:80?transport=tcp",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            },
+            {
+                "urls": "turn:global.relay.metered.ca:443",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            },
+            {
+                "urls": "turns:global.relay.metered.ca:443?transport=tcp",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            }
+        ]
+    }
+
   
 def main():
     st.set_page_config(
@@ -201,7 +230,7 @@ def main():
             key="exercise-analysis",
             mode=WebRtcMode.SENDRECV,
             video_processor_factory=VideoProcessorClass,
-            rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+            rtc_configuration=get_rtc_config(),
             media_stream_constraints={
                 "video": True,
                 "audio": False
