@@ -59,8 +59,8 @@ gym-eye/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/shashwat8732/gym-eye-.git
-cd gym-eye-
+git clone https://github.com/shashwat8732/gym-eye.git
+cd gym-eye
 ```
 
 ### 2. Install system dependencies
