@@ -215,7 +215,7 @@ def main():
                 "credential": "openrelayproject",
             },
         ]
-    },,
+    },
             media_stream_constraints={
                 "video": True,
                 "audio": False
