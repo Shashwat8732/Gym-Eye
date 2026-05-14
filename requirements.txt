@@ -5,4 +5,5 @@ opencv-python-headless
 pandas
 groq
 gtts
+tornado
 python-dotenv
