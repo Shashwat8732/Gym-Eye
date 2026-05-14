@@ -23,23 +23,23 @@ def get_rtc_config():
             {"urls": "stun:stun.relay.metered.ca:80"},
             {
                 "urls": "turn:global.relay.metered.ca:80",
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"]
+                "username": "268d85afa40a21440a44495d",
+                "credential": "NcYqsRrwEcXEjCHg"
             },
             {
                 "urls": "turn:global.relay.metered.ca:80?transport=tcp",
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"]
+                "username": "268d85afa40a21440a44495d",
+                "credential": "NcYqsRrwEcXEjCHg"
             },
             {
                 "urls": "turn:global.relay.metered.ca:443",
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"]
+                "username": "268d85afa40a21440a44495d",
+                "credential": "NcYqsRrwEcXEjCHg"
             },
             {
                 "urls": "turns:global.relay.metered.ca:443?transport=tcp",
-                "username": st.secrets["TURN_USERNAME"],
-                "credential": st.secrets["TURN_CREDENTIAL"]
+                "username": "268d85afa40a21440a44495d",
+                "credential": "NcYqsRrwEcXEjCHg"
             }
         ]
     }
