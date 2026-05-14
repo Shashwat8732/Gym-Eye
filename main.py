@@ -49,7 +49,7 @@ def get_rtc_config():
 def main():
     st.set_page_config(
         page_icon="🏋️‍♀️",
-        page_title="AI Real-time GYM Coach",
+        page_title="Gym Eye - AI Workout Coach",
         initial_sidebar_state="expanded",
         layout="centered"
     )
@@ -81,7 +81,7 @@ def main():
     workout_started = st.session_state.get("workout_started", False)
     
     with st.sidebar:
-        st.title("🏋️‍♂️ Apna AI Coach")
+        st.title("🏋️‍♂️ Gym Eye - AI Workout Coach")
 
         if st.session_state.username:
             st.caption(f"👤 Login as {st.session_state.username}")
