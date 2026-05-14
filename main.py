@@ -17,8 +17,7 @@ from services.coaching.tts import TextToSpeech
 from services.coaching.voice_pipeline import VoicePipeline, autoplay_audio
 
 
-
-ddef get_rtc_config():
+def get_rtc_config():
     return {
         "iceServers": [
             {"urls": ["stun:stun.l.google.com:19302"]},
