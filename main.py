@@ -20,13 +20,24 @@ from services.coaching.voice_pipeline import VoicePipeline, autoplay_audio
 def get_rtc_config():
     return {
         "iceServers": [
-            {"urls": ["stun:stun.l.google.com:19302"]},
+            {"urls": "stun:stun.relay.metered.ca:80"},
             {
-                "urls": [
-                    "turn:relay.metered.ca:80",
-                    "turn:relay.metered.ca:443",
-                    "turns:relay.metered.ca:443?transport=tcp"
-                ],
+                "urls": "turn:global.relay.metered.ca:80",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            },
+            {
+                "urls": "turn:global.relay.metered.ca:80?transport=tcp",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            },
+            {
+                "urls": "turn:global.relay.metered.ca:443",
+                "username": st.secrets["TURN_USERNAME"],
+                "credential": st.secrets["TURN_CREDENTIAL"]
+            },
+            {
+                "urls": "turns:global.relay.metered.ca:443?transport=tcp",
                 "username": st.secrets["TURN_USERNAME"],
                 "credential": st.secrets["TURN_CREDENTIAL"]
             }
