@@ -16,38 +16,11 @@ from services.coaching.llm import LLMCoach
 from services.coaching.tts import TextToSpeech
 from services.coaching.voice_pipeline import VoicePipeline, autoplay_audio
 
-
-def get_rtc_config():
-    return {
-        "iceServers": [
-            {"urls": "stun:stun.relay.metered.ca:80"},
-            {
-                "urls": "turn:global.relay.metered.ca:80",
-                "username": "268d85afa40a21440a44495d",
-                "credential": "NcYqsRrwEcXEjCHg"
-            },
-            {
-                "urls": "turn:global.relay.metered.ca:80?transport=tcp",
-                "username": "268d85afa40a21440a44495d",
-                "credential": "NcYqsRrwEcXEjCHg"
-            },
-            {
-                "urls": "turn:global.relay.metered.ca:443",
-                "username": "268d85afa40a21440a44495d",
-                "credential": "NcYqsRrwEcXEjCHg"
-            },
-            {
-                "urls": "turns:global.relay.metered.ca:443?transport=tcp",
-                "username": "268d85afa40a21440a44495d",
-                "credential": "NcYqsRrwEcXEjCHg"
-            }
-        ]
-    }
   
 def main():
     st.set_page_config(
         page_icon="🏋️‍♀️",
-        page_title="Gym Eye - AI Workout Coach",
+        page_title="AI Real-time GYM Coach",
         initial_sidebar_state="expanded",
         layout="centered"
     )
@@ -228,8 +201,7 @@ def main():
             key="exercise-analysis",
             mode=WebRtcMode.SENDRECV,
             video_processor_factory=VideoProcessorClass,
-            rtc_configuration=get_rtc_config(),
-        
+            rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
             media_stream_constraints={
                 "video": True,
                 "audio": False
@@ -239,7 +211,10 @@ def main():
 
         sync_metrics_update(context)
 
-      
+        if context.state.playing:
+            time.sleep(0.25)
+            st.rerun()
+
         inject_webrtc_styles()
 
     st.divider()
