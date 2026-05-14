@@ -240,10 +240,7 @@ def main():
 
         sync_metrics_update(context)
 
-        if context.state.playing:
-            time.sleep(0.25)
-            st.rerun()
-
+        
         inject_webrtc_styles()
 
     st.divider()
