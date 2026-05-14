@@ -17,7 +17,7 @@
 
 ## 🖥️ Demo
 
-> Live App: [gym-eye on Streamlit Cloud](https://gym-eye.streamlit.app)
+> Live App: [gym-eye on Streamlit Cloud](https://gym-eye-ai-gym-coach.streamlit.app/)
 
 ---
 
